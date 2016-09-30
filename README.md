@@ -6,4 +6,3 @@ collection of standards and style guide for daily used technologies
 - [Javascript](javascript/README.md)
 - CSS
 - HTML
-- Angularjs
