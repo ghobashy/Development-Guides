@@ -31,41 +31,58 @@
 
 
 
- ## Types
+ ## References
 
-  <a name="types--primitives"></a><a name="1.1"></a>
-  - [1.1](#types--primitives) **Primitives**: When you access a primitive type you work directly on its value.
+  <a name="references--prefer-const"></a><a name="2.1"></a>
+  - [2.1](#references--prefer-const) Use `const` for all of your references; avoid using `var`. eslint: [`prefer-const`](http://eslint.org/docs/rules/prefer-const.html), [`no-const-assign`](http://eslint.org/docs/rules/no-const-assign.html)
 
-    + `string`
-    + `number`
-    + `boolean`
-    + `null`
-    + `undefined`
+    > Why? This ensures that you can't reassign your references, which can lead to bugs and difficult to comprehend code.
 
     ```javascript
-    const foo = 1;
-    let bar = foo;
+    // bad
+    var a = 1;
+    var b = 2;
 
-    bar = 9;
-
-    console.log(foo, bar); // => 1, 9
+    // good
+    const a = 1;
+    const b = 2;
     ```
 
-  <a name="types--complex"></a><a name="1.2"></a>
-  - [1.2](#types--complex)  **Complex**: When you access a complex type you work on a reference to its value.
+  <a name="references--disallow-var"></a><a name="2.2"></a>
+  - [2.2](#references--disallow-var) If you must reassign references, use `let` instead of `var`. eslint: [`no-var`](http://eslint.org/docs/rules/no-var.html) jscs: [`disallowVar`](http://jscs.info/rule/disallowVar)
 
-    + `object`
-    + `array`
-    + `function`
+    > Why? `let` is block-scoped rather than function-scoped like `var`.
 
     ```javascript
-    const foo = [1, 2];
-    const bar = foo;
+    // bad
+    var count = 1;
+    if (true) {
+      count += 1;
+    }
 
-    bar[0] = 9;
+    // good, use the let.
+    let count = 1;
+    if (true) {
+      count += 1;
+    }
+    ```
 
-    console.log(foo[0], bar[0]); // => 9, 9
+  <a name="references--block-scope"></a><a name="2.3"></a>
+  - [2.3](#references--block-scope) Note that both `let` and `const` are block-scoped.
+
+    ```javascript
+    // const and let only exist in the blocks they are defined in.
+    {
+      let a = 1;
+      const b = 1;
+    }
+    console.log(a); // ReferenceError
+    console.log(b); // ReferenceError
     ```
 
 **[⬆ back to top](#table-of-contents)**
+
+
+
+
 
