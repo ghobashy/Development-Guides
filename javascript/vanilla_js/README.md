@@ -377,7 +377,8 @@
     });
     ```
 
-    ## Destructuring
+
+ ## Destructuring
 
   <a name="destructuring--object"></a><a name="5.1"></a>
   - [5.1](#destructuring--object) Use object destructuring when accessing and using multiple properties of an object. jscs: [`requireObjectDestructuring`](http://jscs.info/rule/requireObjectDestructuring)
