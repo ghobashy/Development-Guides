@@ -319,8 +319,6 @@
  <a name="arrays--from"></a><a name="4.4"></a>
   - To convert an array-like object to an array, use Array#slice.
 
-.
-
     ```javascript
     function trigger() {
   		var args = Array.prototype.slice.call(arguments);
