@@ -33,7 +33,7 @@
 
  ## References (ES6 only)
 
- ### These concepts aplly only to ES6, use standard var for ES5.
+ ### These concepts apply only to ES6, use standard `var` for ES5.
   <a name="references--prefer-const"></a><a name="2.1"></a>
   - [2.1](#references--prefer-const) Use `const` for all of your references; avoid using `var`. eslint: [`prefer-const`](http://eslint.org/docs/rules/prefer-const.html), [`no-const-assign`](http://eslint.org/docs/rules/no-const-assign.html)
 
