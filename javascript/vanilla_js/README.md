@@ -1,6 +1,6 @@
 # Javascript Style Guide
 
-## References
+## References and Links
 
 ### Style Guides:
 - [w3schools Style Guide](http://www.w3schools.com/js/js_conventions.asp)
@@ -20,7 +20,7 @@
 ##Table of Contents:
 
  1. [File names](#files)
- 1. [References](#references)
+ 1. [References (ES6 only)](#references)
  1. [Objects, Arrays and Destruction](#objects)
  1. [Strings and Concatenations](#strings)
  1. [Functions and Arrow Functions](#functions)
@@ -31,8 +31,9 @@
 
 
 
- ## References
+ ## References (ES6 only)
 
+ ### These concepts aplly only to ES6, use standard var for ES5.
   <a name="references--prefer-const"></a><a name="2.1"></a>
   - [2.1](#references--prefer-const) Use `const` for all of your references; avoid using `var`. eslint: [`prefer-const`](http://eslint.org/docs/rules/prefer-const.html), [`no-const-assign`](http://eslint.org/docs/rules/no-const-assign.html)
 
