@@ -21,7 +21,8 @@
 
  1. [File names](#files)
  1. [References (ES6 only)](#references)
- 1. [Objects, Arrays and Destruction](#objects)
+ 1. [Objects,  and Destruction](#objects)
+ 1. [Arrays](#arrays)
  1. [Strings and Concatenations](#strings)
  1. [Functions and Arrow Functions](#functions)
  1. [Classes & Constructors (ES6 only)](#classes--constructors)
@@ -101,10 +102,10 @@
     //ES5
 
     // bad
-    const item = new Object();
+    var item = new Object();
 
     // good
-    const item = {};
+    var item = {};
     ```
 
 
@@ -248,7 +249,121 @@
   ```
 
 
+## Arrays
 
+  <a name="arrays--literals"></a><a name="4.1"></a>
+  - [4.1](#arrays--literals) Use the literal syntax for array creation. Use `var` instead of `const` for ES5  eslint: [`no-array-constructor`](http://eslint.org/docs/rules/no-array-constructor.html)
+
+    ```javascript
+    // bad
+    const items = new Array();
+
+    // good
+    const items = [];
+    ```
+
+  <a name="arrays--push"></a><a name="4.2"></a>
+  - [4.2](#arrays--push) Use [Array#push](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/push) instead of direct assignment to add items to an array.
+
+    ```javascript
+    const someStack = []; // var someStack = []; for ES5
+
+    // bad
+    someStack[someStack.length] = 'abracadabra';
+
+    // good
+    someStack.push('abracadabra');
+    ```
+#### Copying an array
+  <a name="es6-array-spreads"></a><a name="4.3"></a>
+  - [4.3](#es6-array-spreads) For ES6, use array spreads `...` to copy arrays.
+
+    ```javascript
+    // bad
+    const len = items.length;
+    const itemsCopy = [];
+    let i;
+
+    for (i = 0; i < len; i += 1) {
+      itemsCopy[i] = items[i];
+    }
+
+    // good
+    const itemsCopy = [...items];
+    ```
+    <a name="es6-array-spreads"></a><a name="4.3"></a>
+  - [4.3](#es6-array-spreads) For ES5, use Array#slice to copy arrays.
+
+    ```javascript
+    var len = items.length;
+	var itemsCopy = [];
+	var i;
+
+	// bad
+	for (i = 0; i < len; i++) {
+ 	 itemsCopy[i] = items[i];
+	}
+
+	// good
+	itemsCopy = items.slice();
+    ```
+
+  <a name="arrays--from"></a><a name="4.4"></a>
+  - [4.4](#arrays--from) To convert an array-like object to an array, use [Array.from](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/from).
+
+    ```javascript
+    const foo = document.querySelectorAll('.foo');
+    const nodes = Array.from(foo);
+    ```
+
+  <a name="arrays--callback-return"></a><a name="4.5"></a>
+  - [4.5](#arrays--callback-return) Use return statements in array method callbacks. It's ok to omit the return if the function body consists of a single statement following [8.2](#8.2). eslint: [`array-callback-return`](http://eslint.org/docs/rules/array-callback-return)
+
+    ```javascript
+    // good
+    [1, 2, 3].map((x) => {
+      const y = x + 1;
+      return x * y;
+    });
+
+    // good
+    [1, 2, 3].map(x => x + 1);
+
+    // bad
+    const flat = {};
+    [[0, 1], [2, 3], [4, 5]].reduce((memo, item, index) => {
+      const flatten = memo.concat(item);
+      flat[index] = flatten;
+    });
+
+    // good
+    const flat = {};
+    [[0, 1], [2, 3], [4, 5]].reduce((memo, item, index) => {
+      const flatten = memo.concat(item);
+      flat[index] = flatten;
+      return flatten;
+    });
+
+    // bad
+    inbox.filter((msg) => {
+      const { subject, author } = msg;
+      if (subject === 'Mockingbird') {
+        return author === 'Harper Lee';
+      } else {
+        return false;
+      }
+    });
+
+    // good
+    inbox.filter((msg) => {
+      const { subject, author } = msg;
+      if (subject === 'Mockingbird') {
+        return author === 'Harper Lee';
+      }
+
+      return false;
+    });
+    ```
 
 
 
