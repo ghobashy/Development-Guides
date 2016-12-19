@@ -309,15 +309,28 @@
     ```
 
   <a name="arrays--from"></a><a name="4.4"></a>
-  - [4.4](#arrays--from) To convert an array-like object to an array, use [Array.from](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/from).
+  - To convert an array-like object to an array, use [Array.from](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/from).
 
     ```javascript
     const foo = document.querySelectorAll('.foo');
     const nodes = Array.from(foo);
     ```
 
+ <a name="arrays--from"></a><a name="4.4"></a>
+  - To convert an array-like object to an array, use Array#slice.
+
+.
+
+    ```javascript
+    function trigger() {
+  		var args = Array.prototype.slice.call(arguments);
+ 		 ...
+	}
+    ```
+
   <a name="arrays--callback-return"></a><a name="4.5"></a>
   - [4.5](#arrays--callback-return) Use return statements in array method callbacks. It's ok to omit the return if the function body consists of a single statement following [8.2](#8.2). eslint: [`array-callback-return`](http://eslint.org/docs/rules/array-callback-return)
+  ####valid for ES6 only
 
     ```javascript
     // good
