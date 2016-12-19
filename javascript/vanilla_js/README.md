@@ -90,6 +90,16 @@
   - [3.1](#objects--no-new) Use the literal syntax for object creation. For ES5, use `var` instead of `const` eslint: [`no-new-object`](http://eslint.org/docs/rules/no-new-object.html)
 
     ```javascript
+    //ES6
+
+    // bad
+    const item = new Object();
+
+    // good
+    const item = {};
+
+    //ES5
+
     // bad
     const item = new Object();
 
