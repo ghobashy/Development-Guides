@@ -26,7 +26,7 @@
  1. [Destruction (ES6 only)](#destruction)
  1. [Strings and Concatenations](#strings)
  1. [Functions](#functions)
- 1. [Arrow Functions](#Arrow Functions)
+ 1. [Arrow Functions (ES6 only)](#Arrow Functions)
  1. [Classes & Constructors (ES6 only)](#classes--constructors)
  1. [Modules (ES6 only)](#modules)
  1. [Variables](#variables)
@@ -817,6 +817,53 @@
       bar,
       baz,
     );
+    ```
+
+**[⬆ back to top](#table-of-contents)**
+
+
+## Arrow Functions
+
+  <a name="arrows--use-them"></a><a name="8.1"></a>
+  - [8.1](#arrows--use-them) When you must use function expressions (as when passing an anonymous function), use arrow function notation. eslint: [`prefer-arrow-callback`](http://eslint.org/docs/rules/prefer-arrow-callback.html), [`arrow-spacing`](http://eslint.org/docs/rules/arrow-spacing.html) jscs: [`requireArrowFunctions`](http://jscs.info/rule/requireArrowFunctions)
+
+    > Why? It creates a version of the function that executes in the context of `this`, which is usually what you want, and is a more concise syntax.
+
+    > Why not? If you have a fairly complicated function, you might move that logic out into its own function declaration.
+
+    ```javascript
+    // bad
+    [1, 2, 3].map(function (x) {
+      const y = x + 1;
+      return x * y;
+    });
+
+    // good
+    [1, 2, 3].map((x) => {
+      const y = x + 1;
+      return x * y;
+    });
+    ```
+     <a name="arrows--paren-wrap"></a><a name="8.3"></a>
+  - [8.2](#arrows--paren-wrap) In case the expression spans over multiple lines, wrap it in parentheses for better readability.
+
+    > Why? It shows clearly where the function starts and ends.
+
+    ```js
+    // bad
+    ['get', 'post', 'put'].map(httpMethod => Object.prototype.hasOwnProperty.call(
+        httpMagicObjectWithAVeryLongName,
+        httpMethod
+      )
+    );
+
+    // good
+    ['get', 'post', 'put'].map(httpMethod => (
+      Object.prototype.hasOwnProperty.call(
+        httpMagicObjectWithAVeryLongName,
+        httpMethod
+      )
+    ));
     ```
 
 **[⬆ back to top](#table-of-contents)**
