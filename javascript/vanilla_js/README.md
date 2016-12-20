@@ -25,10 +25,17 @@
  1. [Arrays](#arrays)
  1. [Destruction (ES6 only)](#destruction)
  1. [Strings and Concatenations](#strings)
- 1. [Functions and Arrow Functions](#functions)
+ 1. [Functions](#functions)
+ 1. [Arrow Functions](#Arrow Functions)
  1. [Classes & Constructors (ES6 only)](#classes--constructors)
  1. [Modules (ES6 only)](#modules)
  1. [Variables](#variables)
+
+
+
+ ##Files
+ 	#### TBD
+
 
 
 
@@ -619,7 +626,15 @@
       }
     }
 
-    // good but valid for ES6 only!
+    // good for ES5
+		var test;
+		if (currentUser) {
+		  test = function test() {
+		    console.log('Yup.');
+		  };
+		}
+
+    // good for ES6 only!
     let test;
     if (currentUser) {
       test = () => {
