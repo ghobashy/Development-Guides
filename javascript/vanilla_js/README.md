@@ -1211,5 +1211,203 @@
 
 
 
+## Variables
+
+  <a name="variables--const"></a><a name="13.1"></a>
+  - [13.1](#variables--const) Always use `const` to declare variables. Not doing so will result in global variables. We want to avoid polluting the global namespace. Captain Planet warned us of that. eslint: [`no-undef`](http://eslint.org/docs/rules/no-undef) [`prefer-const`](http://eslint.org/docs/rules/prefer-const)
+
+    ```javascript
+    // bad
+    superPower = new SuperPower();
+
+    // good (ES6)
+    const superPower = new SuperPower();
+
+    // good (ES5)
+    var superPower = new SuperPower();
+    ```
+
+  <a name="variables--one-const"></a><a name="13.2"></a>
+  - [13.2](#variables--one-const) Use one `const` declaration per variable. eslint: [`one-var`](http://eslint.org/docs/rules/one-var.html) jscs: [`disallowMultipleVarDecl`](http://jscs.info/rule/disallowMultipleVarDecl)
+
+    > Why? It's easier to add new variable declarations this way, and you never have to worry about swapping out a `;` for a `,` or introducing punctuation-only diffs. You can also step through each declaration with the debugger, instead of jumping through all of them at once.
+
+    ```javascript
+    // bad
+    const items = getItems(),
+        goSportsTeam = true,
+        dragonball = 'z';
+
+    // bad
+    // (compare to above, and try to spot the mistake)
+    const items = getItems(),
+        goSportsTeam = true;
+        dragonball = 'z';
+
+    // Use var instead of const for ES5   
+    // good
+    const items = getItems();
+    const goSportsTeam = true;
+    const dragonball = 'z';
+    ```
+
+  <a name="variables--const-let-group"></a><a name="13.3"></a>
+  - [13.3](#variables--const-let-group) For `ES6`, group all your `const`s and then group all your `let`s.
+
+    > Why? This is helpful when later on you might need to assign a variable depending on one of the previous assigned variables.
+
+    ```javascript
+    // bad
+    let i, len, dragonball,
+        items = getItems(),
+        goSportsTeam = true;
+
+    // bad
+    let i;
+    const items = getItems();
+    let dragonball;
+    const goSportsTeam = true;
+    let len;
+
+    // good
+    const goSportsTeam = true;
+    const items = getItems();
+    let dragonball;
+    let i;
+    let length;
+    ```
+  - For `ES5`, declare unassigned variables last. This is helpful when later on you might need to assign a variable depending on one of the previous assigned variables. 
+  	```
+		// bad
+		var i, len, dragonball,
+		    items = getItems(),
+		    goSportsTeam = true;
+
+		// bad
+		var i;
+		var items = getItems();
+		var dragonball;
+		var goSportsTeam = true;
+		var len;
+
+		// good
+		var items = getItems();
+		var goSportsTeam = true;
+		var dragonball;
+		var length;
+		var i;
+  	```
+
+
+
+
+  <a name="variables--define-where-used"></a><a name="13.4"></a>
+  - [13.4](#variables--define-where-used) Assign variables where you need them, but place them in a reasonable place.
+
+    > Why? `let` and `const` are block scoped and not function scoped.
+
+    ```javascript
+    // bad - unnecessary function call
+    function checkName(hasName) {
+      const name = getName();
+
+      if (hasName === 'test') {
+        return false;
+      }
+
+      if (name === 'test') {
+        this.setName('');
+        return false;
+      }
+
+      return name;
+    }
+
+    // good
+    function checkName(hasName) {
+      if (hasName === 'test') {
+        return false;
+      }
+
+      const name = getName();
+
+      if (name === 'test') {
+        this.setName('');
+        return false;
+      }
+
+      return name;
+    }
+    ```
+  <a name="variables--no-chain-assignment"></a><a name="13.5"></a>
+  - [13.5](#variables--no-chain-assignment) Don't chain variable assignments.
+
+    > Why? Chaining variable assignments creates implicit global variables.
+
+    ```javascript
+    // bad
+    (function example() {
+      // JavaScript interprets this as
+      // let a = ( b = ( c = 1 ) );
+      // The let keyword only applies to variable a; variables b and c become
+      // global variables.
+      let a = b = c = 1;
+    }());
+
+    console.log(a); // undefined
+    console.log(b); // 1
+    console.log(c); // 1
+
+    // good
+    (function example() {
+      let a = 1;
+      let b = a;
+      let c = a;
+    }());
+
+    console.log(a); // undefined
+    console.log(b); // undefined
+    console.log(c); // undefined
+
+    // the same applies for `const`
+    ```
+
+  <a name="variables--unary-increment-decrement"></a><a name="13.6"></a>
+  - [13.6](#variables--unary-increment-decrement) Avoid using unary increments and decrements (++, --). eslint [`no-plusplus`](http://eslint.org/docs/rules/no-plusplus)
+
+    > Why? Per the eslint documentation, unary increment and decrement statements are subject to automatic semicolon insertion and can cause silent errors with incrementing or decrementing values within an application. It is also more expressive to mutate your values with statements like `num += 1` instead of `num++` or `num ++`. Disallowing unary increment and decrement statements also prevents you from pre-incrementing/pre-decrementing values unintentionally which can also cause unexpected behavior in your programs.
+
+    ```javascript
+      // bad
+
+      let array = [1, 2, 3];
+      let num = 1;
+      num++;
+      --num;
+
+      let sum = 0;
+      let truthyCount = 0;
+      for(let i = 0; i < array.length; i++){
+        let value = array[i];
+        sum += value;
+        if (value) {
+          truthyCount++;
+        }
+      }
+
+      // good
+
+      let array = [1, 2, 3];
+      let num = 1;
+      num += 1;
+      num -= 1;
+
+      const sum = array.reduce((a, b) => a + b, 0);
+      const truthyCount = array.filter(Boolean).length;
+    ```
+
+**[⬆ back to top](#table-of-contents)**
+
+
 
 
