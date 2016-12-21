@@ -2,6 +2,14 @@
 
 ##topics:
 - [Folder Structure](#folder-structure)
+- [Single Responsibility](#single-responsibility)
+- [IIFE](#iife)
+- [Modules](#modules)
+- [Controllers](#controllers)
+- [Services](#services)
+- [Factories](#factories)
+- [Data Services](#data-services)
+- [Directives](#directives)
 
 
 ___
@@ -16,6 +24,41 @@ Folders strutted as nested Modules with separated folders for internal component
          services
 ```
 [google folder structure recommendations](https://docs.google.com/document/d/1XXMvReO8-Awi1EZXAXS4PzDzdNvV6pGcuaF4Q9821Es/pub)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## References
 
