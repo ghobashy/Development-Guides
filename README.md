@@ -4,5 +4,5 @@ collection of standards and style guide for daily used technologies
 
 ### Content:
 - [Javascript](javascript/README.md)
-- CSS
-- HTML
+- [CSS](CSS/README.md)
+- [HTML](HTML/README.md)
