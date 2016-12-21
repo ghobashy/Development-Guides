@@ -1277,7 +1277,7 @@
     let length;
     ```
   - For `ES5`, declare unassigned variables last. This is helpful when later on you might need to assign a variable depending on one of the previous assigned variables. 
-  	```
+  	```javascript
 		// bad
 		var i, len, dragonball,
 		    items = getItems(),
@@ -1302,7 +1302,7 @@
 
 
   <a name="variables--define-where-used"></a><a name="13.4"></a>
-  - [13.4](#variables--define-where-used) Assign variables where you need them, but place them in a reasonable place.
+  - [13.4](#variables--define-where-used)For `ES6`, assign variables where you need them, but place them in a reasonable place.
 
     > Why? `let` and `const` are block scoped and not function scoped.
 
@@ -1339,6 +1339,71 @@
       return name;
     }
     ```
+
+  - For ES5, assign variables at the top of their scope. This helps avoid issues with variable declaration and assignment hoisting related issues.
+
+  ```javascript
+		// bad
+		function () {
+		  test();
+		  console.log('doing stuff..');
+
+		  //..other stuff..
+
+		  var name = getName();
+
+		  if (name === 'test') {
+		    return false;
+		  }
+
+		  return name;
+		}
+
+		// good
+		function () {
+		  var name = getName();
+
+		  test();
+		  console.log('doing stuff..');
+
+		  //..other stuff..
+
+		  if (name === 'test') {
+		    return false;
+		  }
+
+		  return name;
+		}
+
+		// bad - unnecessary function call
+		function () {
+		  var name = getName();
+
+		  if (!arguments.length) {
+		    return false;
+		  }
+
+		  this.setFirstName(name);
+
+		  return true;
+		}
+
+		// good
+		function () {
+		  var name;
+
+		  if (!arguments.length) {
+		    return false;
+		  }
+
+		  name = getName();
+		  this.setFirstName(name);
+
+		  return true;
+		}
+	```
+
+
   <a name="variables--no-chain-assignment"></a><a name="13.5"></a>
   - [13.5](#variables--no-chain-assignment) Don't chain variable assignments.
 
