@@ -1,10 +1,10 @@
 # oneLogin HTML guide
 
 ## Table of Contents
-[Syntax](#syntax)
-[Attribute order](#attribute-order)
-[Boolean attributes](#boolean-attributes)
-[Reducing Markup](#reducing-markup)
+1.[Syntax](#syntax)
+1.[Attribute order](#attribute-order)
+1.[Boolean attributes](#boolean-attributes)
+1.[Reducing Markup](#reducing-markup)
 
 
 
