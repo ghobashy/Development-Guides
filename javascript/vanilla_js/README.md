@@ -23,10 +23,10 @@
  1. [References](#references)
  1. [Objects](#objects)
  1. [Arrays](#arrays)
- 1. [Destruction (ES6 only)](#destruction)
+ 1. [Destruction](#destruction)
  1. [Strings and Concatenations](#strings)
  1. [Functions](#functions)
- 1. [Arrow Functions (ES6 only)](#Arrow Functions)
+ 1. [Arrow Functions](#Arrow Functions)
  1. [Classes & Constructors (ES6 only)](#classes--constructors)
  1. [Modules (ES6 only)](#modules)
  1. [Variables](#variables)
@@ -382,7 +382,7 @@
     ```
 
 
- ## Destructuring (ES6 only)
+ ## destruction
 
  ####This section is applicable for ES6 only!
 
@@ -820,7 +820,7 @@
 
 
 ## Arrow Functions
-
+	#### This section upplies for `ES6` only!
   <a name="arrows--use-them"></a><a name="8.1"></a>
   - [8.1](#arrows--use-them) When you must use function expressions (as when passing an anonymous function), use arrow function notation. eslint: [`prefer-arrow-callback`](http://eslint.org/docs/rules/prefer-arrow-callback.html), [`arrow-spacing`](http://eslint.org/docs/rules/arrow-spacing.html) jscs: [`requireArrowFunctions`](http://jscs.info/rule/requireArrowFunctions)
 
@@ -867,7 +867,7 @@
 
 
 ## Classes & Constructors
-
+	#### This secion applies for ES6 only!
   <a name="constructors--use-class"></a><a name="9.1"></a>
   - [9.1](#constructors--use-class) Always use `class`. Avoid manipulating `prototype` directly.
 
