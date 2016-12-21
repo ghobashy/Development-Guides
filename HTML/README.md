@@ -1,10 +1,10 @@
-# oneLogin HTML/SASS Style guide
+# oneLogin HTML guide
 
 ## Table of Contents
-    - [Syntax](#syntax)
-    - [Attribute order](#attribute-order)
-    - [Boolean attributes](#boolean-attributes)
-    - [Reducing Markup](#reducing-markup)
+[Syntax](#syntax)
+[Attribute order](#attribute-order)
+[Boolean attributes](#boolean-attributes)
+[Reducing Markup](#reducing-markup)
 
 
 
