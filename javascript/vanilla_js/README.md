@@ -820,7 +820,7 @@
 
 
 ## Arrow Functions
-	#### This section upplies for `ES6` only!
+### These concepts apply only to ES6!
   <a name="arrows--use-them"></a><a name="8.1"></a>
   - [8.1](#arrows--use-them) When you must use function expressions (as when passing an anonymous function), use arrow function notation. eslint: [`prefer-arrow-callback`](http://eslint.org/docs/rules/prefer-arrow-callback.html), [`arrow-spacing`](http://eslint.org/docs/rules/arrow-spacing.html) jscs: [`requireArrowFunctions`](http://jscs.info/rule/requireArrowFunctions)
 
@@ -867,7 +867,7 @@
 
 
 ## Classes & Constructors
-	#### This secion applies for ES6 only!
+### These concepts apply only to ES6!
   <a name="constructors--use-class"></a><a name="9.1"></a>
   - [9.1](#constructors--use-class) Always use `class`. Avoid manipulating `prototype` directly.
 
