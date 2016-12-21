@@ -1171,6 +1171,45 @@
 
 **[⬆ back to top](#table-of-contents)**
 
+## Properties
+
+  <a name="properties--dot"></a><a name="12.1"></a>
+  - [12.1](#properties--dot) Use dot notation when accessing properties. eslint: [`dot-notation`](http://eslint.org/docs/rules/dot-notation.html) jscs: [`requireDotNotation`](http://jscs.info/rule/requireDotNotation)
+  	#### use `var` instead of `const` for ES5
+
+    ```javascript
+    const luke = {
+      jedi: true,
+      age: 28,
+    };
+
+    // bad
+    const isJedi = luke['jedi'];
+
+    // good
+    const isJedi = luke.jedi;
+    ```
+
+  <a name="properties--bracket"></a><a name="12.2"></a>
+  - [12.2](#properties--bracket) Use bracket notation `[]` when accessing properties with a variable.
+  	#### use `var` instead of `const` for ES5
+
+    ```javascript
+    const luke = {
+      jedi: true,
+      age: 28,
+    };
+
+    function getProp(prop) {
+      return luke[prop];
+    }
+
+    const isJedi = getProp('jedi');
+    ```
+
+**[⬆ back to top](#table-of-contents)**
+
+
 
 
 
