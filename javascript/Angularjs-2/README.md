@@ -20,7 +20,7 @@ The key is to make the code more reusable, easier to read, and less mistake pron
 
 The following negative example defines the AppComponent, bootstraps the app, defines the Hero model object, and loads heroes from the server ... all in the same file. Don't do this.
 
-```javascript
+```typescript
 	/* avoid */
 	import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 	import { BrowserModule } from '@angular/platform-browser';
