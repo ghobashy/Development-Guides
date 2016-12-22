@@ -60,8 +60,75 @@ The following negative example defines the AppComponent, bootstraps the app, def
 	function getHeroes(): Promise<Hero[]> {
 	  return Promise.resolve(HEROES); // TODO: get hero data from the server;
 	}
+```
+
+Better to redistribute the component and supporting activities into their own dedicated files.
+
+#### main.ts
+
+```typescript
+	import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+	import { AppModule }      from './app/app.module';
+	platformBrowserDynamic().bootstrapModule(AppModule);
+```
+#### app/app.module.ts
+
+```typescript
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
+import { AppComponent } from './app.component';
+import { HeroesComponent } from './heroes/heroes.component';
+@NgModule({
+  imports: [
+    BrowserModule,
+  ],
+  declarations: [
+    AppComponent,
+    HeroesComponent
+  ],
+  exports: [ AppComponent ],
+  bootstrap: [ AppComponent ]
+})
+export class AppModule { }
 
 
+```
+#### app/app.component.ts
 
+```typescript
+import { Component } from '@angular/core';
+import { HeroService } from './heroes';
+@Component({
+  moduleId: module.id,
+  selector: 'toh-app',
+  template: `
+      <toh-heroes></toh-heroes>
+    `,
+  styleUrls: ['app.component.css'],
+  providers: [ HeroService ]
+})
+export class AppComponent { }
+```
+
+#### app/heroes/heroes.component.ts
+
+```typescrpit
+import { Component, OnInit } from '@angular/core';
+import { Hero, HeroService } from './shared';
+@Component({
+  selector: 'toh-heroes',
+  template: `
+      <pre>{{heroes | json}}</pre>
+    `
+})
+export class HeroesComponent implements OnInit {
+  heroes: Hero[] = [];
+  constructor(private heroService: HeroService) {}
+  ngOnInit() {
+    this.heroService.getHeroes()
+      .then(heroes => this.heroes = heroes);
+  }
+}
 
 ```
