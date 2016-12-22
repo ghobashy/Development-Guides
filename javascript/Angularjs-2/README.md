@@ -132,3 +132,42 @@ export class HeroesComponent implements OnInit {
 }
 
 ```
+
+#### app/heroes/shared/hero.service.ts
+
+```typescript
+import { Injectable } from '@angular/core';
+import { HEROES } from './mock-heroes';
+@Injectable()
+export class HeroService {
+  getHeroes() {
+    return Promise.resolve(HEROES);
+  }
+}
+
+```
+
+#### app/heroes/shared/hero.model.ts
+
+```typescript
+export class Hero {
+  id: number;
+  name: string;
+}
+
+
+```
+
+#### app/heroes/shared/mock-heroes.ts
+
+```typescript
+import { Hero } from './hero.model';
+export const HEROES: Hero[] = [
+  {id: 1, name: 'Bombasto'},
+  {id: 2, name: 'Tornado'},
+  {id: 3, name: 'Magneta'},
+];
+
+```
+
+As the app grows, this rule becomes even more important.
