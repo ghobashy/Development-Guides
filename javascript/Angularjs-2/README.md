@@ -215,6 +215,7 @@ Do use upper camel case when naming classes.
 export class exceptionService {
   constructor() { }
 }
+```
 
 ####app/shared/exception.service.ts
 ```typescript
@@ -245,7 +246,7 @@ Do tolerate existing const variables that are spelled in UPPER_SNAKE_CASE.
 export const mockHeroes   = ['Sam', 'Jill']; // prefer
 export const heroesUrl    = 'api/heroes';    // prefer
 export const VILLAINS_URL = 'api/villains';  // tolerate
-
+```
 ###Interfaces
 Do name an interface using upper camel case.
 
@@ -260,7 +261,7 @@ Consider using a class instead of an interface.
 *Why?* A class can act as an interface (use implements instead of extends).
 
 *Why?* An interface-class can be a provider lookup token in Angular dependency injection.
-```
+
 
 ####app/shared/hero-collector.service.ts
 ```typescript
@@ -575,6 +576,278 @@ export class HeroButtonComponent {
 export class HeroButtonComponent {
   @Output() change = new EventEmitter<any>();
   @Input() label: string;
+}
+```
+
+###Avoid Renaming Inputs and Outputs
+
+Avoid renaming inputs and outputs, when possible.
+
+*Why?* May lead to confusion when the output or the input properties of a given directive are named a given way but exported differently as a public API.
+
+####app/heroes/shared/hero-button/hero-button.component.ts
+```typescript
+/* avoid */
+@Component({
+  selector: 'toh-hero-button',
+  template: `<button>{{label}}</button>`
+})
+export class HeroButtonComponent {
+  @Output('changeEvent') change = new EventEmitter<any>();
+  @Input('labelAttribute') label: string;
+}
+
+```
+####app/app.component.html
+```typescript
+<!-- avoid -->
+<toh-hero-button labelAttribute="OK" (changeEvent)="doSomething()">
+</toh-hero-button>
+```
+####app/heroes/shared/hero-button/hero-button.component.ts
+```typescript
+@Component({
+  selector: 'toh-hero-button',
+  template: `<button>{{label}}</button>`
+})
+export class HeroButtonComponent {
+  @Output() change = new EventEmitter<any>();
+  @Input() label: string;
+}
+```
+####app/app.component.html
+```typescript
+<toh-hero-button label="OK" (change)="doSomething()">
+</toh-hero-button>
+```
+
+###Member Sequence
+
+Do place properties up top followed by methods.
+
+Do place private members after public members, alphabetized.
+
+*Why?* Placing members in a consistent sequence makes it easy to read and helps instantly identify which members of the component serve which purpose.
+
+####app/shared/toast/toast.component.ts
+```typescript
+/* avoid */
+export class ToastComponent implements OnInit {
+  private defaults = {
+    title: '',
+    message: 'May the Force be with You'
+  };
+  message: string;
+  title: string;
+  private toastElement: any;
+  ngOnInit() {
+    this.toastElement = document.getElementById('toh-toast');
+  }
+  // private methods
+  private hide() {
+    this.toastElement.style.opacity = 0;
+    window.setTimeout(() => this.toastElement.style.zIndex = 0, 400);
+  }
+  activate(message = this.defaults.message, title = this.defaults.title) {
+    this.title = title;
+    this.message = message;
+    this.show();
+  }
+  private show() {
+    console.log(this.message);
+    this.toastElement.style.opacity = 1;
+    this.toastElement.style.zIndex = 9999;
+    window.setTimeout(() => this.hide(), 2500);
+  }
+}
+```
+####app/shared/toast/toast.component.ts
+```typescript
+export class ToastComponent implements OnInit {
+  // public properties
+  message: string;
+  title: string;
+  // private fields
+  private defaults = {
+    title: '',
+    message: 'May the Force be with You'
+  };
+  private toastElement: any;
+  // public methods
+  activate(message = this.defaults.message, title = this.defaults.title) {
+    this.title = title;
+    this.message = message;
+    this.show();
+  }
+  ngOnInit() {
+    this.toastElement = document.getElementById('toh-toast');
+  }
+  // private methods
+  private hide() {
+    this.toastElement.style.opacity = 0;
+    window.setTimeout(() => this.toastElement.style.zIndex = 0, 400);
+  }
+  private show() {
+    console.log(this.message);
+    this.toastElement.style.opacity = 1;
+    this.toastElement.style.zIndex = 9999;
+    window.setTimeout(() => this.hide(), 2500);
+  }
+}
+```
+
+###Put Logic in Services
+
+Do limit logic in a component to only that required for the view. All other logic should be delegated to services.
+
+Do move reusable logic to services and keep components simple and focused on their intended purpose.
+
+*Why?* Logic may be reused by multiple components when placed within a service and exposed via a function.
+
+*Why?* Logic in a service can more easily be isolated in a unit test, while the calling logic in the component can be easily mocked.
+
+*Why?* Removes dependencies and hides implementation details from the component.
+
+*Why?* Keeps the component slim, trim, and focused.
+
+####app/heroes/hero-list/hero-list.component.ts
+```typescript
+/* avoid */
+import { OnInit } from '@angular/core';
+import { Http, Response } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
+import { Hero } from '../shared/hero.model';
+const heroesUrl = 'http://angular.io';
+export class HeroListComponent implements OnInit {
+  heroes: Hero[];
+  constructor(private http: Http) {}
+  getHeroes() {
+    this.heroes = [];
+    this.http.get(heroesUrl)
+      .map((response: Response) => <Hero[]>response.json().data)
+      .catch(this.catchBadResponse)
+      .finally(() => this.hideSpinner())
+      .subscribe((heroes: Hero[]) => this.heroes = heroes);
+  }
+  ngOnInit() {
+    this.getHeroes();
+  }
+  private catchBadResponse(err: any, source: Observable<any>) {
+    // log and handle the exception
+    return new Observable();
+  }
+  private hideSpinner() {
+    // hide the spinner
+  }
+}
+```
+####app/heroes/hero-list/hero-list.component.ts
+```typescript
+import { Component, OnInit } from '@angular/core';
+import { Hero, HeroService } from '../shared';
+@Component({
+  selector: 'toh-hero-list',
+  template: `...`
+})
+export class HeroListComponent implements OnInit {
+  heroes: Hero[];
+  constructor(private heroService: HeroService) {}
+  getHeroes() {
+    this.heroes = [];
+    this.heroService.getHeroes()
+      .subscribe(heroes => this.heroes = heroes);
+  }
+  ngOnInit() {
+    this.getHeroes();
+  }
+}
+```
+
+###Don't Prefix Output Properties
+
+Do name events without the prefix on.
+
+Do name event handler methods with the prefix on followed by the event name.
+
+*Why?* This is consistent with built-in events such as button clicks.
+
+*Why?* Angular allows for an alternative syntax on-*. If the event itself was prefixed with on this would result in an on-onEvent binding expression.
+
+####app/heroes/hero.component.ts
+```typescript
+/* avoid */
+@Component({
+  selector: 'toh-hero',
+  template: `...`
+})
+export class HeroComponent {
+  @Output() onSavedTheDay = new EventEmitter<boolean>();
+}
+```
+####app/app.component.html
+```typescript
+<!-- avoid -->
+<toh-hero (onSavedTheDay)="onSavedTheDay($event)"></toh-hero>
+```
+####app/heroes/hero.component.ts
+```typescript
+export class HeroComponent {
+  @Output() savedTheDay = new EventEmitter<boolean>();
+}
+```
+####app/app.component.html
+```typescript
+<toh-hero (savedTheDay)="onSavedTheDay($event)"></toh-hero>
+```
+
+###Put Presentation Logic in the Component Class
+
+Do put presentation logic in the component class, and not in the template.
+
+*Why?* Logic will be contained in one place (the component class) instead of being spread in two places.
+
+*Why?* Keeping the component's presentation logic in the class instead of the template improves testability, maintainability, and reusability.
+
+####app/heroes/hero-list/hero-list.component.ts
+```typescript
+/* avoid */
+@Component({
+  selector: 'toh-hero-list',
+  template: `
+    <section>
+      Our list of heroes:
+      <hero-profile *ngFor="let hero of heroes" [hero]="hero">
+      </hero-profile>
+      Total powers: {{totalPowers}}<br>
+      Average power: {{totalPowers / heroes.length}}
+    </section>
+  `
+})
+export class HeroListComponent {
+  heroes: Hero[];
+  totalPowers: number;
+}
+```
+####app/heroes/hero-list/hero-list.component.ts
+```typescript
+@Component({
+  selector: 'toh-hero-list',
+  template: `
+    <section>
+      Our list of heroes:
+      <toh-hero *ngFor="let hero of heroes" [hero]="hero">
+      </toh-hero>
+      Total powers: {{totalPowers}}<br>
+      Average power: {{avgPower}}
+    </section>
+  `
+})
+export class HeroListComponent {
+  heroes: Hero[];
+  totalPowers: number;
+  get avgPower() {
+    return this.totalPowers / this.heroes.length;
+  }
 }
 
 ```
