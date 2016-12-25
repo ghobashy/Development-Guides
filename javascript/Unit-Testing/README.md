@@ -106,3 +106,67 @@ describe('Directive: directiveName', function() {
     });
 });
 ```
+
+## Watchers
+
+```js
+app.controller('MainCtrl', function($scope) {
+  var vm = this;
+  var previousSelection = null;
+  
+  vm.currentSelection = null;
+  
+  $scope.$watch('vm.currentSelection', function(newVal, oldVal){
+    // we'd like to test THIS LINE HERE
+    previousSelection = oldVal;
+  });
+  
+  vm.changeSelection = function(shouldRevert){
+    if(shouldRevert){
+      vm.currentSelection = previousSelection;
+    }
+  };
+});
+
+```
+
+```js
+describe('Testing $watch expressions', function() {
+  var $scope = null;
+  var ctrl = null;
+
+  //you need to indicate your module in a test
+  beforeEach(module('moduleName'));
+
+  describe('Controller: controllerName', function() {
+
+    var scope;
+
+    beforeEach(inject(function($rootScope, $controller) {
+      scope = $rootScope.$new();
+
+      ctrl = $controller('controllerName', {
+        $scope: scope
+      });
+
+    }));
+
+    it('test using $digest', function() {
+      // make an initial selection
+      ctrl.currentSelection = 'Hi';
+      scope.$digest();
+
+      // make another one
+      ctrl.currentSelection = 'New';
+      scope.$digest();
+
+      // simulate a ng-change which should revert to the previous value
+      ctrl.changeSelection(true);
+
+      expect(ctrl.currentSelection).toEqual('Hi');
+    });
+
+  });
+
+});
+```
