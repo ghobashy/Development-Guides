@@ -1,4 +1,4 @@
-# oneLogin HTML/SASS Style guide
+# HTML/SASS Style guide
 
 ## Table of Contents
   1. [CSS](#css)
