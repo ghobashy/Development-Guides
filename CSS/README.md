@@ -1,4 +1,4 @@
-# HTML/SASS Style guide
+# SASS Style guide
 
 ## Table of Contents
   1. [CSS](#css)
