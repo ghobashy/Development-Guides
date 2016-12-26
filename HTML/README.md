@@ -6,14 +6,21 @@
 2. [Attribute order](#attribute-order)
 3. [Boolean attributes](#boolean-attributes)
 4. [Reducing Markup](#reducing-markup)
+5. [Comments](#comments)
+6. [Loading Files](#loading-files)
 
 
 
 ### Syntax
 * Use soft tabs with two spaces—they're the only way to guarantee code renders the same in any environment.
+* Use lowercase elements. `<li></li>`
+* Use lowercase attribute names. ` <img src="">`
+* Do not add blank lines without a reason.
+* For readability, add blank lines to separate large or logical code blocks.
 * Nested elements should be indented once (two spaces).
-* Always use double quotes, never single quotes, on attributes.
+* Always use double quotes, never single quotes, on attributes 
 * Don't include a trailing slash in self-closing elements—the HTML5 spec says they're optional (e.g. `<img>`).
+* When using an HTML editor, it is inconvenient to scroll right and left to read the HTML code.
 * Don’t omit optional closing tags (e.g. `</li>` or `</body>`).
 
 ```html
@@ -28,6 +35,17 @@
   </body>
 </html>
 ```
+
+* HTML5 allows spaces around equal signs. But space-less is easier to read, and groups entities better together.
+```html
+<!-- Bad Example -->
+<link rel = "stylesheet" href = "styles.css">
+
+<!-- Good Example -->
+<link rel="stylesheet" href="styles.css">
+```
+
+
 ### Attribute Order
 HTML attributes should come in this particular order for easier reading of code.
 
@@ -77,3 +95,19 @@ Whenever possible, avoid superfluous parent elements when writing HTML. Many tim
 <img class="avatar" src="...">
 ```
 
+### Comments
+* Short comments should be written on one line, like this:
+``` html
+<!-- This is a comment -->
+```
+* Comments that spans more than one line, should be written like this:
+```html 
+<!-- 
+  This is a long comment example. This is a long comment example.
+  This is a long comment example. This is a long comment example.
+-->
+```
+
+### Loading files
+* CSS Files should be loaded in the `<head>` tag.
+* Javascript files should be loaded at the bottom of the `<body>` tag so that the HTML and CSS are loaded first.
