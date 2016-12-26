@@ -1,4 +1,4 @@
-# oneLogin HTML guide
+# HTML guide
 
 ## Table of Contents
 
@@ -96,11 +96,11 @@ Whenever possible, avoid superfluous parent elements when writing HTML. Many tim
 ```
 
 ### Comments
-* Short comments should be written on one line, like this:
+Short comments should be written on one line, like this:
 ``` html
 <!-- This is a comment -->
 ```
-* Comments that spans more than one line, should be written like this:
+Comments that spans more than one line, should be written like this:
 ```html 
 <!-- 
   This is a long comment example. This is a long comment example.
