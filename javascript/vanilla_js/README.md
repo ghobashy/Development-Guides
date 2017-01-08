@@ -10,6 +10,7 @@
 ### Best practices:
 - [W3.org javascript best practices](https://www.w3.org/wiki/JavaScript_best_practices)
 - [W3 schools best practices](http://www.w3schools.com/js/js_best_practices.asp)
+- [Writing Fast, Memory-Efficient JavaScript](https://www.smashingmagazine.com/2012/11/writing-fast-memory-efficient-javascript/)
 
 ### General:
 - [Javascript the right way](http://jstherightway.org/)
