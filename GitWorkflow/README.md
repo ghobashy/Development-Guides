@@ -96,7 +96,7 @@
 2. Click on Git Flow.
 ![gitflow](https://cloud.githubusercontent.com/assets/12252068/22692868/8e6e030e-ed49-11e6-8fb5-c424f54df136.png)
 
-3.	Click on **Start new hotfix**.
+3.	Click on **Start new hotfix**.                                                      
 ![newhot](https://cloud.githubusercontent.com/assets/12252068/22693493/37bb131e-ed4c-11e6-9e90-34e79a2374c2.png)
 
 4.	Write your HotFix Name.
