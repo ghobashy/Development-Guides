@@ -44,14 +44,29 @@
 2. Click on Git flow
 ![gitflow](https://cloud.githubusercontent.com/assets/12252068/22692868/8e6e030e-ed49-11e6-8fb5-c424f54df136.png)
 
-3. Click on **Start New Release**
+3. Click on **Start New Release**.
+
 ![new release](https://cloud.githubusercontent.com/assets/12252068/22692912/c1cd5128-ed49-11e6-8a6e-12d6ee8fd95a.png)
 
-4.Type the Name of the release as follows and choose the **Latest development branch** Option.
+4. Type the Name of the release as follows and choose the **Latest development branch** Option.
 ![git new](https://cloud.githubusercontent.com/assets/12252068/22692977/0880d0e0-ed4a-11e6-9358-13d253ab5001.png)
 
 5. The release will be successfully created below release folder.
+
 ## Start New Feature
+1. Switch to sprint branch
+2. Click on Git flow
+![gitflow](https://cloud.githubusercontent.com/assets/12252068/22692868/8e6e030e-ed49-11e6-8fb5-c424f54df136.png)
+
+3.	The following screen will appear click on **Other Actions**,Then click on **Start New Feature**.
+![new fe](https://cloud.githubusercontent.com/assets/12252068/22693084/864756b6-ed4a-11e6-8e1a-c873e1f380b1.jpg)
+
+4. Type Feature Name in the appeared window following this format “Feature_Name”, Select **Latest development branch** Option and click Ok.
+![fe _name](https://cloud.githubusercontent.com/assets/12252068/22693170/c8f1fee4-ed4a-11e6-92ab-7f0101fc1f69.png)
+
+5.	The feature is created below “feature” folder and you are switched automatically to the created feature successfully.
+![view_fe](https://cloud.githubusercontent.com/assets/12252068/22693198/e8943f64-ed4a-11e6-9bbb-01a30251c175.png)
+
 ## Start New Feature out of existing one
 ## Start New Hotfix
 ## Commit Messages
