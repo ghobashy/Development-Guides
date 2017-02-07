@@ -45,6 +45,7 @@
 ![gitflow](https://cloud.githubusercontent.com/assets/12252068/22692868/8e6e030e-ed49-11e6-8fb5-c424f54df136.png)
 
 3. Click on **Start New Release**.
+
 ![new release](https://cloud.githubusercontent.com/assets/12252068/22692912/c1cd5128-ed49-11e6-8a6e-12d6ee8fd95a.png)
 
 4. Type the Name of the release as follows and choose the **Latest development branch** Option.
@@ -69,8 +70,44 @@
 ![view_fe](https://cloud.githubusercontent.com/assets/12252068/22693198/e8943f64-ed4a-11e6-9bbb-01a30251c175.png)
 
 ## Start New Feature out of existing one
+1.	Make Sure that you are on the parent feature.
+![view_fe](https://cloud.githubusercontent.com/assets/12252068/22693198/e8943f64-ed4a-11e6-9bbb-01a30251c175.png)
+
+2. Click on Git Flow
+![gitflow](https://cloud.githubusercontent.com/assets/12252068/22692868/8e6e030e-ed49-11e6-8fb5-c424f54df136.png)
+
+3.	The following screen will appear click on **Other Actions**,Then click on **Start New Feature**.
+
+![new fe](https://cloud.githubusercontent.com/assets/12252068/22693084/864756b6-ed4a-11e6-8e1a-c873e1f380b1.jpg)
+
+4.	Type Feature Name in the appeared window following this format “Child_Feature_Name”, Select **Working copy parent** Option and click Ok.
+![child_fe](https://cloud.githubusercontent.com/assets/12252068/22693404/d00f1256-ed4b-11e6-9d26-c1263c54b9bb.png)
+
+5.	The feature “Child_Feature_Name” is successfully created out of “Feature_Name” Feature.
+![child_v](https://cloud.githubusercontent.com/assets/12252068/22693425/e9a3f9fc-ed4b-11e6-82cb-6388ea212d77.png)
+
+
 ## Start New Hotfix
+1. Switch to develop branch.
+2. Click on Git Flow.
+![gitflow](https://cloud.githubusercontent.com/assets/12252068/22692868/8e6e030e-ed49-11e6-8fb5-c424f54df136.png)
+
+3.	Click on **Start new hotfix**.
+![newhot](https://cloud.githubusercontent.com/assets/12252068/22693493/37bb131e-ed4c-11e6-9e90-34e79a2374c2.png)
+
+4.	Write your HotFix Name
+![hotname](https://cloud.githubusercontent.com/assets/12252068/22693533/558a12b4-ed4c-11e6-907f-595dad80bd3d.png)
+
+5.	The hotfix name will be created successfully when you have latest of your master branch 
 ## Commit Messages
+**ENHANCEMENT:** For Enhancing and code refactoring.
+**UPDATE:** Adding new code.
+**MAINTENANCE:** Update an existing code or fixing an error without an opened defect.
+**DEFECT:** For Fixing Defects
 ## Create Pull Request
 ## Code Review Checklist
+
+- [x] Make sure that the base branch is the sprint branch.
+- [x] Make sure that the code follows the best practices defined in the development guide.
+- [x] Make sure that the feature to be merged has no conflicts with the base branch.
 
