@@ -12,7 +12,6 @@
 8. [Commit Messages](#commit-messages)
 9. [Create Pull Request](#create-pull-request)
 10. [Code Review Checklist](#code-review-checklist)
-11. [Naming Conventions](#naming-conventions)
 
 
 ## Clone Onelogin Repository
