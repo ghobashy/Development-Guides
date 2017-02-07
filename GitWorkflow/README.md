@@ -71,6 +71,7 @@
 
 ## Start New Feature out of existing one
 1.	Make Sure that you are on the parent feature.
+
 ![view_fe](https://cloud.githubusercontent.com/assets/12252068/22693198/e8943f64-ed4a-11e6-9bbb-01a30251c175.png)
 
 2. Click on Git Flow
@@ -81,9 +82,11 @@
 ![new fe](https://cloud.githubusercontent.com/assets/12252068/22693084/864756b6-ed4a-11e6-8e1a-c873e1f380b1.jpg)
 
 4.	Type Feature Name in the appeared window following this format “Child_Feature_Name”, Select **Working copy parent** Option and click Ok.
+
 ![child_fe](https://cloud.githubusercontent.com/assets/12252068/22693404/d00f1256-ed4b-11e6-9d26-c1263c54b9bb.png)
 
 5.	The feature “Child_Feature_Name” is successfully created out of “Feature_Name” Feature.
+
 ![child_v](https://cloud.githubusercontent.com/assets/12252068/22693425/e9a3f9fc-ed4b-11e6-82cb-6388ea212d77.png)
 
 
@@ -93,18 +96,43 @@
 ![gitflow](https://cloud.githubusercontent.com/assets/12252068/22692868/8e6e030e-ed49-11e6-8fb5-c424f54df136.png)
 
 3.	Click on **Start new hotfix**.
+
 ![newhot](https://cloud.githubusercontent.com/assets/12252068/22693493/37bb131e-ed4c-11e6-9e90-34e79a2374c2.png)
 
-4.	Write your HotFix Name
+4.	Write your HotFix Name.
+
 ![hotname](https://cloud.githubusercontent.com/assets/12252068/22693533/558a12b4-ed4c-11e6-907f-595dad80bd3d.png)
 
 5.	The hotfix name will be created successfully when you have latest of your master branch 
 ## Commit Messages
 **ENHANCEMENT:** For Enhancing and code refactoring.
+
 **UPDATE:** Adding new code.
+
 **MAINTENANCE:** Update an existing code or fixing an error without an opened defect.
+
 **DEFECT:** For Fixing Defects
 ## Create Pull Request
+1. Push your code to the feature you are working on.
+2. Click on **Create pull request** from repository tab.
+![create](https://cloud.githubusercontent.com/assets/12252068/22693895/cab50fa2-ed4d-11e6-8001-db8c002e1c23.png)
+
+3. The following screen will appear, Click on Create pull request on web.
+
+![on web](https://cloud.githubusercontent.com/assets/12252068/22693927/eb741eea-ed4d-11e6-94fa-51d2fee954c9.png)
+
+4. You will be redirected to the following Github Page.
+
+![pull](https://cloud.githubusercontent.com/assets/12252068/22693974/1a1fdea0-ed4e-11e6-9d80-3485ba98e84a.png)
+
+..* Make sure that the base branch is the sprint branch.
+
+..*	The Branch is able to merge and has no conflicts.
+
+..*	You assigned the pull request to the one responsible for reviewing your code.
+
+5. Click on **Create pull request** button.
+
 ## Code Review Checklist
 
 - [x] Make sure that the base branch is the sprint branch.
