@@ -49,13 +49,14 @@
 ![new release](https://cloud.githubusercontent.com/assets/12252068/22692912/c1cd5128-ed49-11e6-8a6e-12d6ee8fd95a.png)
 
 4. Type the Name of the release as follows and choose the **Latest development branch** Option.
+
 ![git new](https://cloud.githubusercontent.com/assets/12252068/22692977/0880d0e0-ed4a-11e6-9358-13d253ab5001.png)
 
 5. The release will be successfully created below release folder.
 
 ## Start New Feature
-1. Switch to sprint branch
-2. Click on Git flow
+1. Switch to sprint branch.
+2. Click on Git flow.
 ![gitflow](https://cloud.githubusercontent.com/assets/12252068/22692868/8e6e030e-ed49-11e6-8fb5-c424f54df136.png)
 
 3.	The following screen will appear click on **Other Actions**,Then click on **Start New Feature**.
@@ -96,7 +97,6 @@
 ![gitflow](https://cloud.githubusercontent.com/assets/12252068/22692868/8e6e030e-ed49-11e6-8fb5-c424f54df136.png)
 
 3.	Click on **Start new hotfix**.
-
 ![newhot](https://cloud.githubusercontent.com/assets/12252068/22693493/37bb131e-ed4c-11e6-9e90-34e79a2374c2.png)
 
 4.	Write your HotFix Name.
@@ -105,6 +105,7 @@
 
 5.	The hotfix name will be created successfully when you have latest of your master branch 
 ## Commit Messages
+
 **ENHANCEMENT:** For Enhancing and code refactoring.
 
 **UPDATE:** Adding new code.
