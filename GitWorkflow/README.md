@@ -16,14 +16,14 @@
 
 
 ## Clone Onelogin Repository
-* Clone the repository in your desired directory
+1. Clone the repository in your desired directory
 `git clone https://github.com/vodafone-germany/onelogin`
-* Cd to the cloned directory
+2. Cd to the cloned directory
 `cd onelogin`
-* Install Dependencies
+3. Install Dependencies
 `npm install`
-* Run `ng serve`
-* Open `localhost:4200` in the browser
+4. Run `ng serve`
+5. Open `localhost:4200` in the browser
 
 ## Git-flow Terminology
 **Branch:** Group of different features, Features or ideas.
@@ -40,6 +40,17 @@
 ## Visualize Gitflow
 ![visualize git](https://cloud.githubusercontent.com/assets/12252068/22692749/14d09ea8-ed49-11e6-9c68-9fc5435613a4.png)
 ## Start New Release
+1. Switch to sprint branch
+2. Click on Git flow
+![gitflow](https://cloud.githubusercontent.com/assets/12252068/22692868/8e6e030e-ed49-11e6-8fb5-c424f54df136.png)
+
+3. Click on **Start New Release**
+![new release](https://cloud.githubusercontent.com/assets/12252068/22692912/c1cd5128-ed49-11e6-8a6e-12d6ee8fd95a.png)
+
+4.Type the Name of the release as follows and choose the **Latest development branch** Option.
+![git new](https://cloud.githubusercontent.com/assets/12252068/22692977/0880d0e0-ed4a-11e6-9358-13d253ab5001.png)
+
+5. The release will be successfully created below release folder.
 ## Start New Feature
 ## Start New Feature out of existing one
 ## Start New Hotfix
