@@ -38,7 +38,7 @@
 
 **Hotfix Branch:** Emergency fix for production site.
 ## Visualize Gitflow
-(screenshots/visualize-git.png)
+![alt text](https://drive.google.com/open?id=0B5d688kzKbqWNDJweUZiWTMxZ00)
 ## Start New Release
 ## Start New Feature
 ## Start New Feature out of existing one
