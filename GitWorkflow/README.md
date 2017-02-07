@@ -95,6 +95,7 @@
 ![hotname](https://cloud.githubusercontent.com/assets/12252068/22693533/558a12b4-ed4c-11e6-907f-595dad80bd3d.png)
 
 5.	The hotfix name will be created successfully when you have latest of your master branch 
+
 ## Commit Messages
 
 **ENHANCEMENT:** For Enhancing and code refactoring.
