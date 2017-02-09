@@ -27,7 +27,7 @@
 ## Git-flow Terminology
 
 | Type                | Description                                                                                                   |
-| -----------         |:-------------------------------------------------------------------------------------------------------------:|
+| -----------         |:------------------------------------------------------------------------------------------------------------- |
 | **Branch:**         | Group of different features, Features or ideas.                                                               |
 | **Master Branch:**  | Is the base for all branches and the branch which contains the stable code on the production environment.     |
 | **Develop Branch:** | All code ready for production on a staging environment.                                                       |
@@ -102,7 +102,7 @@
 ## Commit Messages
 
 | Message            | Description                                                                                                         |
-| -----------        |:-------------------------------------------------------------------------------------------------------------------:|
+| -----------        |:------------------------------------------------------------------------------------------------------------------- |
 | **DEVELOP:**       | General development tasks which do not fit into one of the following categories.                                    |
 | **FEATURE:**       | When you add a new feature.                                                                                         |
 | **DEFECT:**        | If you fix a defect or an incident - Please add #jira INC-3833 with your ticket number.                             |
@@ -112,8 +112,8 @@
 | **FORMS:**         | Updates to forms need to have this category.                                                                        |
 | **ICONS:**         | If you push new icons.                                                                                              |
 | **NOTFORCORE:**    | Use this category if you add some files which do not need to go into the core.                                      |
-| **ENABLEMENT:**    |	If you push code related to the enablement.                                                                        |
-| **WORKAROUND:**    |	If you implement a workaround instead of a real fix that everybody knows that there has to be done something else. |
+| **ENABLEMENT:**    | If you push code related to the enablement.                                                                        |
+| **WORKAROUND:**    | If you implement a workaround instead of a real fix that everybody knows that there has to be done something else. |
 | **TRACKING:**      | When you add tracking stuff.                                                                                        |
 | **TESTING:**       | If you add regression test stuff please use this category.                                                          |
 | **DOCUMENTATION:** | If you add documentation, doc updates.                                                                              |
