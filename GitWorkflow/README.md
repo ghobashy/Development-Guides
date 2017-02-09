@@ -45,7 +45,11 @@
 
 **NOTE:** feature/integration branches plus feature/hotfix branchen and a relase branch at the end for SIT and the final release. Can be thrown away at any point of time.
 ## Visualize Gitflow
-![visualize git](https://cloud.githubusercontent.com/assets/12252068/22692749/14d09ea8-ed49-11e6-9c68-9fc5435613a4.png)
+
+![git flow](https://cloud.githubusercontent.com/assets/12252068/22778422/8a36e16c-eebf-11e6-9763-a1e6dc1668a6.PNG)
+
+[Click here for reference](https://confluence.sp.vodafone.com/pages/viewpage.action?pageId=45158781)
+
 ## Start New Release
 1. Switch to sprint branch
 2. Click on Git flow                                                       
