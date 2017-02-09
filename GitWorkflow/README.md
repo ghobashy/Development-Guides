@@ -26,14 +26,14 @@
 
 ## Git-flow Terminology
 
-| Type                | Description                                                                                                   |
-| -----------         |:------------------------------------------------------------------------------------------------------------- |
-| **Branch:**         | Group of different features, Features or ideas.                                                               |
-| **Master Branch:**  | Is the base for all branches and the branch which contains the stable code on the production environment.     |
-| **Develop Branch:** | All code ready for production on a staging environment.                                                       |
-| **Feature:**        | Active code that is already in development. Usually related to a ticket/story.                                |
-| **Release:**        | Integration branch to test develop testing into master, It is created once/twice per Sprint by the team lead. |
-| **Hotfix Branch:**  | Emergency fix for production site.                                                                            |
+| Type               | Description                                                                                                   |
+|:-----------        |:------------------------------------------------------------------------------------------------------------- |
+| **Branch**         | Group of different features, Features or ideas.                                                               |
+| **Master Branch**  | Is the base for all branches and the branch which contains the stable code on the production environment.     |
+| **Develop Branch** | All code ready for production on a staging environment.                                                       |
+| **Feature**        | Active code that is already in development. Usually related to a ticket/story.                                |
+| **Release**        | Integration branch to test develop testing into master, It is created once/twice per Sprint by the team lead. |
+| **Hotfix Branch**  | Emergency fix for production site.                                                                            |
 
 **NOTE:** feature/integration branches plus feature/hotfix branchen and a relase branch at the end for SIT and the final release. Can be thrown away at any point of time.
 ## Visualize Gitflow
@@ -101,26 +101,26 @@
 
 ## Commit Messages
 
-| Message            | Description                                                                                                         |
-| -----------        |:------------------------------------------------------------------------------------------------------------------- |
-| **DEVELOP:**       | General development tasks which do not fit into one of the following categories.                                    |
-| **FEATURE:**       | When you add a new feature.                                                                                         |
-| **DEFECT:**        | If you fix a defect or an incident - Please add #jira INC-3833 with your ticket number.                             |
-| **BUILD:**         | This category is used by the CI server only.                                                                        |
-| **SECURITY:**      | If you apply a security relevant fix.                                                                               |
-| **MAINTENANCE:**   | For maintenance tasks like cleanup.                                                                                 |
-| **FORMS:**         | Updates to forms need to have this category.                                                                        |
-| **ICONS:**         | If you push new icons.                                                                                              |
-| **NOTFORCORE:**    | Use this category if you add some files which do not need to go into the core.                                      |
-| **ENABLEMENT:**    | If you push code related to the enablement.                                                                        |
-| **WORKAROUND:**    | If you implement a workaround instead of a real fix that everybody knows that there has to be done something else. |
-| **TRACKING:**      | When you add tracking stuff.                                                                                        |
-| **TESTING:**       | If you add regression test stuff please use this category.                                                          |
-| **DOCUMENTATION:** | If you add documentation, doc updates.                                                                              |
-| **FIX:**           | If the build fails and you need to fix it use this category.                                                        |
-| **UPDATE:**        | If you update modules (npm) or libraries (for ex. new jquery addon version).                                        |
-| **INTEGRATION:**   | If you integrate services and switch from stubs to the backend services.                                            |
-| **DEFECT:**        | For Fixing Defects.                                                                                                 |
+| Message           | Description                                                                                                         |
+|:-----------       |:------------------------------------------------------------------------------------------------------------------- |
+| **DEVELOP**       | General development tasks which do not fit into one of the following categories.                                    |
+| **FEATURE**       | When you add a new feature.                                                                                         |
+| **DEFECT**        | If you fix a defect or an incident - Please add #jira INC-3833 with your ticket number.                             |
+| **BUILD**         | This category is used by the CI server only.                                                                        |
+| **SECURITY**      | If you apply a security relevant fix.                                                                               |
+| **MAINTENANCE**   | For maintenance tasks like cleanup.                                                                                 |
+| **FORMS**         | Updates to forms need to have this category.                                                                        |
+| **ICONS**         | If you push new icons.                                                                                              |
+| **NOTFORCORE**    | Use this category if you add some files which do not need to go into the core.                                      |
+| **ENABLEMENT**    | If you push code related to the enablement.                                                                        |
+| **WORKAROUND**    | If you implement a workaround instead of a real fix that everybody knows that there has to be done something else. |
+| **TRACKING**      | When you add tracking stuff.                                                                                        |
+| **TESTING**       | If you add regression test stuff please use this category.                                                          |
+| **DOCUMENTATION** | If you add documentation, doc updates.                                                                              |
+| **FIX**           | If the build fails and you need to fix it use this category.                                                        |
+| **UPDATE**        | If you update modules (npm) or libraries (for ex. new jquery addon version).                                        |
+| **INTEGRATION**   | If you integrate services and switch from stubs to the backend services.                                            |
+| **DEFECT**        | For Fixing Defects.                                                                                                 |
 
 ## Create Pull Request
 1. Push your code to the feature you are working on.
