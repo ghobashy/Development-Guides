@@ -130,7 +130,8 @@
 3. The following screen will appear, Click on Create pull request on web.                             
 ![on web](https://cloud.githubusercontent.com/assets/12252068/22693927/eb741eea-ed4d-11e6-94fa-51d2fee954c9.png)
 
-4. You will be redirected to the following Github Page.                                
+4. You will be redirected to the following Github Page.                       
+                           
 ![pull](https://cloud.githubusercontent.com/assets/12252068/22693974/1a1fdea0-ed4e-11e6-9d80-3485ba98e84a.png)
 
 * Make sure that the base branch is the sprint branch.
