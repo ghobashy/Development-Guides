@@ -25,17 +25,25 @@
 5. Open `localhost:4200` in the browser
 
 ## Git-flow Terminology
-**Branch:** Group of different features, Features or ideas.
 
-**Master Branch:** Is the base for all branches and the branch which contains the stable code on the production environment. 
+| Type                | Description                                                                                                   |
+| -----------         |:-------------------------------------------------------------------------------------------------------------:|
+| **Branch:**         | Group of different features, Features or ideas.                                                               |
+| **Master Branch:**  | Is the base for all branches and the branch which contains the stable code on the production environment.     |
+| **Develop Branch:** | All code ready for production on a staging environment.                                                       |
+| **Feature:**        | Active code that is already in development. Usually related to a ticket/story.                                |
+| **Release:**        | Integration branch to test develop testing into master, It is created once/twice per Sprint by the team lead. |
+| **Hotfix Branch:**  | Emergency fix for production site.                                                                            |
 
-**Develop Branch:** All code ready for production on a staging environment.
 
-**Feature:** Active code that is already in development. Usually related to a ticket/story.
 
-**Release:** Integration branch to test develop testing into master.
 
-**Hotfix Branch:** Emergency fix for production site.
+
+
+
+
+
+**NOTE:** feature/integration branches plus feature/hotfix branchen and a relase branch at the end for SIT and the final release. Can be thrown away at any point of time.
 ## Visualize Gitflow
 ![visualize git](https://cloud.githubusercontent.com/assets/12252068/22692749/14d09ea8-ed49-11e6-9c68-9fc5435613a4.png)
 ## Start New Release
