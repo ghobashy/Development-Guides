@@ -97,11 +97,23 @@
 
 ## Commit Messages
 
-**ENHANCEMENT:** For Enhancing and code refactoring.
-
-**UPDATE:** Adding new code.
-
-**MAINTENANCE:** Update an existing code or fixing an error without an opened defect.
+**DEVELOP:**	General development tasks which do not fit into one of the following categories
+**FEATURE:**	When you add a new feature
+**DEFECT:**	If you fix a defect or an incident - Please add #jira INC-3833 with your ticket number
+**BUILD:**	This category is used by the CI server only
+**SECURITY:**	If you apply a security relevant fix
+**MAINTENANCE:**	For maintenance tasks like cleanup
+**FORMS:**	Updates to forms need to have this category
+**ICONS:**	If you push new icons
+**NOTFORCORE:**	Use this category if you add some files which do not need to go into the core
+**ENABLEMENT:**	If you push code related to the enablement
+**WORKAROUND:**	If you implement a workaround instead of a real fix that everybody knows that there has to be done something else
+**TRACKING:**	When you add tracking stuff
+**TESTING:**	If you add regression test stuff please use this category
+**DOCUMENTATION:**	If you add documentation, doc updates
+**FIX:**	If the build fails and you need to fix it use this category
+**UPDATE:**	If you update modules (npm) or libraries (for ex. new jquery addon version)
+**INTEGRATION:**	If you integrate services and switch from stubs to the backend services
 
 **DEFECT:** For Fixing Defects
 ## Create Pull Request
