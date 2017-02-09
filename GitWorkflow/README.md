@@ -137,7 +137,7 @@
 
 * The Branch is able to merge and has no conflicts.
 
-* You assigned the pull request to the one responsible for reviewing your code.
+* You assigned the pull request to the one responsible for reviewing your code.                          
 
 5. Click on **Create pull request** button.
 
